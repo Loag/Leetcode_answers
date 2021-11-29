@@ -46,3 +46,18 @@ class Solution:
             return cont[i]
         
         return dp(len(cost))
+
+# 1137. N-th Tribonacci Number 
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        def dp(i):
+            if i < 2:
+                return 0
+            if i == 2:
+                return 1
+            if i not in cont:
+                cont[i] = dp(i-1) + dp(i - 2) + dp(i - 3)
+            return cont[i]
+        
+        cont = {}
+        return dp(n+1)
